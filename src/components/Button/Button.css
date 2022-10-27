@@ -1,0 +1,21 @@
+.container-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container-button button {
+    flex: 1;
+    background: #FFC700;
+    border-radius: 4px;
+    border-style: unset;
+    padding: 10px 30px;
+}
+
+.container-button span {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+}
+
