@@ -10,9 +10,26 @@
     background-color: #FFC700;
 }
 
+.navbar a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .navbar h1 {
     margin-left: 18px;
     font-size: 24px;
     letter-spacing: -0.015em;
     color: #000;
+}
+
+@media (min-width: 576px) {
+    .navbar h1 {
+        margin-left: 23px;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar h1 {
+        margin-left: 31px;
+    }
 }

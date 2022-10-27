@@ -2,46 +2,53 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     background: #6C6C6C;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
-    max-width: 479px;
+    width: 100%;
     height: 464px;
-    margin: auto;
     padding: 0 17px;
+    margin: 0 auto;
 }
 
 
-.card-login-container h1 {
-    
+.card-login-title  {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+.card-login-title h1 {
     font-size: 36px;
     font-weight: 400;
     color: #FFF;
     text-transform: uppercase;
-    margin-bottom: 40px;
 }
 
 .card-login-input {
     display: flex;
     justify-content: center;
+    min-width: 265px;
     width: 100%;
+    margin-bottom: 20px;
 }
 
-.card-login-container input {
+.card-login-input input {
     box-sizing: border-box;
     background: #FEFEFE;
     border: 1px solid #FEFEFE;
     border-radius: 4px;
     padding: 10px 0;
     padding-left: 14px;
-    margin-bottom: 20px;
     height: 47px;
-    width: 100%;
+    flex: 1;
 }
 
 
-.card-login-container input ::placeholder {
+.card-login-input input::placeholder {
 
     font-family: 'Open Sans';
     font-style: normal;
@@ -54,6 +61,25 @@
     color: #9E9E9E;
 }
 
+
 .card-login-container button {
-   margin: 35px 0;
+    margin-top: 35px;
+    margin-bottom: 100px;
+}
+
+@media (min-width: 576px) {
+    .card-login-container {
+        max-width: 479px;
+        height: 573px;
+        margin: 0 auto;
+        padding: 0 44px;
+    }
+
+    .card-login-title h1 {
+        font-size: 48px;
+        font-weight: 400;
+        color: #FFF;
+        text-transform: uppercase;
+    }
+
 }

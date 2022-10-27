@@ -13,7 +13,7 @@ export default function CardLogin() {
                 <div className="card-login-input">
                     <input type="password" name="" id="" placeholder='Senha'/>
                 </div>
-                <Button text="fazer login"/>
+                    <Button text="fazer login"/>
         </div>
     )
 }
