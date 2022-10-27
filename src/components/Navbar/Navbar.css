@@ -33,3 +33,9 @@
         margin-left: 31px;
     }
 }
+
+@media (min-width: 1200px) {
+    .navbar h1 {
+        margin-left: 49px;
+    }
+}

@@ -10,6 +10,7 @@
     border-radius: 4px;
     border-style: unset;
     padding: 10px 30px;
+    cursor: pointer;
 }
 
 .container-button span {
