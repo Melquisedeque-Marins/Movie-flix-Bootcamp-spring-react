@@ -6,8 +6,10 @@
 .navbar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height:68px;
     background-color: #FFC700;
+    padding: 0 18px;
 }
 
 .navbar a {
@@ -16,26 +18,37 @@
 }
 
 .navbar h1 {
-    margin-left: 18px;
     font-size: 24px;
     letter-spacing: -0.015em;
     color: #000;
 }
 
+.navbar button {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #000;
+    font-weight: 700;
+    background-color: unset;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    width: 100px;
+    padding: 4px 0;
+}
+
 @media (min-width: 576px) {
-    .navbar h1 {
-        margin-left: 23px;
+    .navbar {
+        padding: 0 23px;
     }
 }
 
 @media (min-width: 768px) {
-    .navbar h1 {
-        margin-left: 31px;
+    .navbar {
+        padding: 0 31px;
     }
 }
 
 @media (min-width: 1200px) {
-    .navbar h1 {
-        margin-left: 49px;
+    .navbar {
+        padding: 0 49px;
     }
 }

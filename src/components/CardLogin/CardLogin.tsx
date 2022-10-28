@@ -1,7 +1,7 @@
 import Button from '../Button/Button';
 import { useForm } from 'react-hook-form';
 import './CardLogin.css';
-import { requestBackendLogin } from '../../util/requests';
+import { getAuthData, requestBackendLogin, saveAuthData } from '../../util/requests';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
@@ -22,6 +22,9 @@ export default function CardLogin() {
     const onSubimit = (formData : FormData) => {
         requestBackendLogin(formData)
         .then(response => {
+            saveAuthData(response.data);
+            const token = getAuthData().access_token;
+            console.log(token);
             setHasError(false);
             console.log('SUCESSO', response);
             history.push('/movies');

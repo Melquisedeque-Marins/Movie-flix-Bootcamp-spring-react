@@ -6,6 +6,7 @@ export default function Navbar() {
             <a href="/">
                 <h1>MovieFlix</h1>
             </a>
+                <button>sair</button>
         </div>
     )
 }
