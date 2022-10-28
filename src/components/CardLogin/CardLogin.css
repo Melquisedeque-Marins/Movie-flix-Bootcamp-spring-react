@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     background: #6C6C6C;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
@@ -34,7 +34,7 @@
     justify-content: center;
     min-width: 265px;
     width: 100%;
-    margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 .card-login-input input {
@@ -67,16 +67,24 @@ form {
 }
 
 .card-login-container button {
-    margin-top: 35px;
+    margin-top: 75px;
     margin-bottom: 100px;
+}
+
+.alert.alert-danger {
+    margin-bottom: 0;
 }
 
 @media (min-width: 576px) {
     .card-login-container {
-        width: 391px;
+        width: 479px;
         height: 573px;
         margin: 0 auto;
         padding: 0 44px;
+    }
+
+    .card-login-title  {
+        margin-bottom: 0px;
     }
 
     .card-login-title h1 {
@@ -84,6 +92,7 @@ form {
         font-weight: 400;
         color: #FFF;
         text-transform: uppercase;
+        margin-bottom: 10px;
     }
 
 }
