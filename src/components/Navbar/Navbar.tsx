@@ -1,3 +1,4 @@
+import { isAuthenticated } from '../../util/auth';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -6,7 +7,9 @@ export default function Navbar() {
             <a href="/">
                 <h1>MovieFlix</h1>
             </a>
-                <button>sair</button>
+               { isAuthenticated() &&
+               <button>sair</button>
+               }
         </div>
     )
 }
