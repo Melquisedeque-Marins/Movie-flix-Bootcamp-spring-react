@@ -2,8 +2,10 @@ import Button from '../Button/Button';
 import { useForm } from 'react-hook-form';
 import './CardLogin.css';
 import { getAuthData, requestBackendLogin, saveAuthData } from '../../util/requests';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { AuthContext } from '../../AuthContext';
+import { getTokenData } from '../../util/auth';
 
 
 type FormData = {
@@ -12,6 +14,8 @@ type FormData = {
 }
 
 export default function CardLogin() {
+
+    const { setAuthContextData } = useContext(AuthContext);
 
     const [hasError, setHasError] = useState(false);
 
@@ -23,10 +27,11 @@ export default function CardLogin() {
         requestBackendLogin(formData)
         .then(response => {
             saveAuthData(response.data);
-            const token = getAuthData().access_token;
-            console.log(token);
             setHasError(false);
-            console.log('SUCESSO', response);
+            setAuthContextData({
+                authenticated: true,
+                tokenData: getTokenData(),
+            })
             history.push('/movies');
 
         })
