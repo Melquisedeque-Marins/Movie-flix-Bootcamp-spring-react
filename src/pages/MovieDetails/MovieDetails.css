@@ -12,6 +12,7 @@
     font-size: 24px;
     letter-spacing: -0.015em;
     color: #FFFFFF;
+    padding-right: 20px;
 }
 
 .cards-reviews {
@@ -20,6 +21,7 @@
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
     padding: 17px 10px;
+    margin-bottom: 18px;
 }
 
 @media (min-width: 1200px) {
@@ -33,5 +35,11 @@
 
     .cards-reviews {
         padding: 10px 17px;
+        margin-bottom: 30px;
+    }
+
+    .cards-reviews.review-form{
+        margin-top: 25px;
+        padding: 25px 17px;
     }
 }
