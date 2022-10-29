@@ -21,3 +21,17 @@
     border-radius: 4px;
     padding: 17px 10px;
 }
+
+@media (min-width: 1200px) {
+    .movie-details-container {
+        padding: 36px 40px;
+    }
+
+    .title-details h1 {
+        font-size: 48px;
+    }    
+
+    .cards-reviews {
+        padding: 10px 17px;
+    }
+}
