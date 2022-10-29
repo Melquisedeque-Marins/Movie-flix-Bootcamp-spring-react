@@ -8,6 +8,8 @@ import './Movies.css';
 
 export default function Movies() {
 
+    
+
     const [page, setPage] = useState<SpringPage<movie>>(); 
 
     useEffect(() => {
@@ -22,7 +24,6 @@ export default function Movies() {
 
         requestBackend(params).then((response) => {
             setPage(response.data);
-            console.log(response)
         });
     }, []);
 

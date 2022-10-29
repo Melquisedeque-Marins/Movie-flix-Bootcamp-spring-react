@@ -1,12 +1,12 @@
 import { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
 import { requestBackend } from '../../util/requests';
-
-import './MovieDetails.css';
 import { useParams } from 'react-router-dom';
-import CardReviews from '../../components/CardReview/CardReviews';
 import { hasAnyHoles } from '../../util/auth';
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
+
+import './MovieDetails.css';
+import CardReviews from '../../components/CardReviews/CardReviews';
 
 type urlParams = {
     movieId: string;
@@ -18,7 +18,7 @@ type User = {
     email: string;
 }
 
-type Review = {
+export type Review = {
     id: number;
     text: string;
     movieId: number;
@@ -43,6 +43,12 @@ export default function MovieDetails() {
                  setReviews(response.data);
         });
     }, [movieId]);
+
+    const handleOnInsertReview = (review: Review) => {
+        const clone = [...reviews];
+        clone.push(review);
+        setReviews(clone);
+    }
     
     return (
         <div className="movie-details-container">
@@ -50,17 +56,10 @@ export default function MovieDetails() {
                 <h1>Tela detalhes do filme id: 1</h1>
             </div>
                 {hasAnyHoles(['ROLE_MEMBER']) &&
-            <div className="cards-reviews review-form">
-                <ReviewForm/>
-            </div>
+                <ReviewForm movieId={movieId} onInsertReview={handleOnInsertReview} />
                 }
-            <div className="cards-reviews">
-                {reviews.map((review) =>
-                    (
-                        <CardReviews text={review.text} name={review.user.name} key={review.id} />
-                    )
-                )}
-            </div>
+                <CardReviews reviews={reviews}/>
+             
         </div>
     );
 }

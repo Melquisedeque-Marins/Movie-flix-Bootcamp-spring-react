@@ -37,7 +37,6 @@ export default function CardLogin() {
         })
         .catch(error => {
             setHasError(true);
-            console.log('ERRO', error);
         });
     };
 
@@ -48,7 +47,7 @@ export default function CardLogin() {
                 </div>
                    { hasError && (
                    <div className="alert alert-danger">
-                        Erro ao tentar efetuar o login
+                        Erro ao tentar autenticar o usuário
                     </div>
                     )}
                 <form onSubmit={handleSubmit(onSubimit)} >
