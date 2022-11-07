@@ -1,14 +1,13 @@
 import { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import MovieCard from '../../components/MovieCard/MovieCard';
 import { movie } from '../../types/movie';
 import { SpringPage } from '../../types/vendor/spring';
 import { requestBackend } from '../../util/requests';
 import './Movies.css';
 
-export default function Movies() {
 
-    
+export default function Movies() {
 
     const [page, setPage] = useState<SpringPage<movie>>(); 
 
@@ -18,7 +17,7 @@ export default function Movies() {
             withCredentials: true,
             params: {
                 page: 0,
-                size: 12,
+                size: 4,
             },
         };
 
@@ -27,12 +26,12 @@ export default function Movies() {
         });
     }, []);
 
-
     return (
         <div className="movies-container">
             <h1>Tela listagem de filmes</h1>
-                <Link to='/movies/1'> acessar/movies/1</Link>
-                <Link to='/movies/2'> acessar/movies/2</Link>
+           
+            <MovieCard movies={page}/>
+                
         </div>
     )
 }
