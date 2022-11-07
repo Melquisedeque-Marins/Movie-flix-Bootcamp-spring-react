@@ -1,7 +1,7 @@
 
 .movie-card-content {
-    width: 300px;
-    height: 100%;
+    width: 100%;
+    min-height: 322px;
     padding-bottom: 53px;
     margin: 20px 0;
     background: #6C6C6C;
@@ -10,7 +10,7 @@
 }
 
 .movie-card-content img {
-    width: 300px;
+    width: 100%;
     margin-bottom: 11px;
     margin-top: 26px;
 }
@@ -40,5 +40,21 @@
     letter-spacing: -0.015em;
     margin: 0;
    
+}
+
+@media (min-width: 576px) {
+    .movie-card-content {
+      
+        min-height: 364px;
+       
+    }
+
+}
+@media (min-width: 768px) {
+    .movie-card-content {
+      
+       
+    }
+
 }
 

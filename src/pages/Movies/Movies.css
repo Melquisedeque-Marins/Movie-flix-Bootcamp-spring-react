@@ -1,15 +1,25 @@
 .movies-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: #525252;
+    padding: 10px;
+    margin: 0 auto;
+    height: calc(100vh - 68px);
 }
 
 .movies-container a {
-    color: #FFF;
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: 12px;
-    letter-spacing: -0.015em;
     text-decoration: none;
+}
+
+
+@media (min-width: 576px) {
+    .movies-container {
+        padding: 20px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .movies-container {
+        padding: 40px;
+    }
+
 }

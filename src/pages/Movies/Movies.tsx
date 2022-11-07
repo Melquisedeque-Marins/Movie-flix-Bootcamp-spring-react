@@ -30,11 +30,15 @@ export default function Movies() {
     return (
         <div className="movies-container">
            
-            <div className="movie-cards">
-                <Link to="/">
-                    <MovieCard movies={page}/>
-                </Link>
-            </div>
+                        <div className='row'>
+                            {page?.content.map(movie => (
+                                <div key={movie.id}  className='col-sm-6 col-m-6 col-lg-6 col-xl-3'>
+                                    <Link to="/">
+                                        <MovieCard movie={movie}/>
+                                    </Link>
+                                </div>
+                            ))}
+                        </div>
                 
         </div>
     )
