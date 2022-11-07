@@ -53,7 +53,7 @@ export default function MovieDetails() {
     return (
         <div className="movie-details-container">
             <div className="title-details">
-                <h1>Tela detalhes do filme id: 1</h1>
+                <h1>Tela detalhes do filme id: {movieId}</h1>
             </div>
                 {hasAnyHoles(['ROLE_MEMBER']) &&
                 <ReviewForm movieId={movieId} onInsertReview={handleOnInsertReview} />
