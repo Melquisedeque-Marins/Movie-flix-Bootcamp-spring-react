@@ -1,5 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { movie } from '../../types/movie';
 import { SpringPage } from '../../types/vendor/spring';
@@ -28,9 +29,12 @@ export default function Movies() {
 
     return (
         <div className="movies-container">
-            <h1>Tela listagem de filmes</h1>
            
-            <MovieCard movies={page}/>
+            <div className="movie-cards">
+                <Link to="/">
+                    <MovieCard movies={page}/>
+                </Link>
+            </div>
                 
         </div>
     )
