@@ -18,7 +18,6 @@ const Pagination = ( { forcePage, pageCount, range, onChange } : Props) => {
             pageCount={pageCount}
             pageRangeDisplayed={range}
             marginPagesDisplayed={1}
-            
             containerClassName='pagination-container'
             pageLinkClassName='pagination-item'
             breakClassName='pagination-item'

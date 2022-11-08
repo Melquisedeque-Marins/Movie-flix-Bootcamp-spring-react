@@ -19,6 +19,10 @@
     margin-left: 10px;
 }
 
+.pagination-item:hover {
+    color: orangered;
+}
+
 .pagination-item.active {
     background-color: #FFC700;
 }
@@ -55,3 +59,4 @@
     display: flex;
     align-items: center;
 }
+

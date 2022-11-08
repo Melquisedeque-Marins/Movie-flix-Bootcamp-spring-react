@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import { Review } from '../../pages/MovieDetails/MovieDetails';
 import { requestBackend } from '../../util/requests';
 import Button from '../Button/Button';
+import { toast } from 'react-toastify';
+
 import './ReviewForm.css';
 
 type FormData = {
@@ -33,9 +35,11 @@ export default function ReviewForm( { movieId, onInsertReview } : Props)  {
         requestBackend(config)
             .then((response) => {
                 setValue('text', '');
+                toast.info('Sua avaliação foi salva com sucesso')
                 onInsertReview(response.data);
             })
             .catch(error => {
+                toast.error('Não foi possivel salvar sua avaliação')
                 console.log('ERROR', error)
             })
    }
