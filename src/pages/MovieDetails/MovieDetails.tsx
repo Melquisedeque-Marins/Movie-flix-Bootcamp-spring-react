@@ -69,13 +69,13 @@ export default function MovieDetails() {
     
     return (
         <div className="movie-details-container">
-            <div className="title-details">
-                <MovieCardFull movie={movie}/>
-            </div>
-                {hasAnyHoles(['ROLE_MEMBER']) &&
-                <ReviewForm movieId={movieId} onInsertReview={handleOnInsertReview} />
-                }
-                <CardReviews reviews={reviews}/>
+                <div className="movie-details-content">
+                    <MovieCardFull movie={movie}/>
+                    {hasAnyHoles(['ROLE_MEMBER']) &&
+                    <ReviewForm movieId={movieId} onInsertReview={handleOnInsertReview} />
+                    }
+                    <CardReviews reviews={reviews}/>
+                </div>
              
         </div>
     );

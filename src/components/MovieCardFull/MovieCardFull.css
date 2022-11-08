@@ -9,7 +9,13 @@
     border-radius: 10px;
 }
 
-.movie-card-full-content img {
+.movie-card-full-img {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.movie-card-full-img img {
     width: 100%;
     margin-bottom: 20px;
 }
@@ -49,22 +55,64 @@
     font-weight: 400;
     letter-spacing: -0.015em;
     margin: 0;
-   
 }
 
 @media (min-width: 576px) {
     .movie-card-full-content {
-      
         min-height: 364px;
+    }
+}
+
+@media (min-width: 768px) {
+    .movie-card-full-content {
+        margin-bottom: 40px;
+        padding: 40px;
+    }
+    .movie-card-full-img img {
+        max-width: 608px;
+        margin-bottom: 20px;
+    }
+    
+    .movie-card-full-text h1 {
+        font-size: 36px;
+    }
+    
+    .movie-card-full-text h2 {
+        font-size: 24px;
+    }
+    
+    .movie-card-full-text p {
+        font-size: 24px;
+    }
+
+    .movie-card-full-synopsis p{
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .movie-card-full-content {
+        display: flex;
+        flex-direction: row;
        
     }
 
-}
-@media (min-width: 768px) {
-    .movie-card-content {
-      
-       
+    .movie-card-full-img {
+        display: flex;
+        margin-top: 0;
+        flex:1;
     }
+
+    .movie-card-full-img img {
+        margin-bottom: 0;
+    }
+
+
+    .movie-card-full-details {
+        flex:1;
+        margin-left: 40px;
+    }
+
 
 }
 

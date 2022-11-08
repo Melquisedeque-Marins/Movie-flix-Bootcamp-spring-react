@@ -13,13 +13,13 @@
 .filter-box {
     display: flex;
     align-items: center;
-    width: 260px;
+    max-width: 260px;
     height: 60px;
 }
 
 
 .filter-select__control {
-    width: 260px;
+    min-width: 260px;
     font-size: 16px;
     background-color: #6C6C6C !important;
     height: 50px;
@@ -45,5 +45,12 @@
 
 .filter-select__indicator-separator {
     display: none;
+}
+
+@media (min-width: 768px) {
+    .movie-filter-container {
+        margin-bottom: 40px;
+        margin-top: 20px;
+    }
 }
 

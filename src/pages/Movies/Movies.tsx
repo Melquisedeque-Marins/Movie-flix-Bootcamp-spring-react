@@ -17,25 +17,25 @@ type ControlComponentsData = {
 export default function Movies() {
 
     const [controlComponentsData, setControlComponentsData]
-     = useState<ControlComponentsData>(
-        {
-        activePage: 0,
-        filterData: { genre: null }
-        }
-    );
+        = useState<ControlComponentsData>(
+            {
+                activePage: 0,
+                filterData: { genre: null }
+            }
+        );
 
-    const [page, setPage] = useState<SpringPage<movie>>(); 
+    const [page, setPage] = useState<SpringPage<movie>>();
 
     const handlePageChange = ((pageNumber: number) => {
-       setControlComponentsData({activePage: pageNumber, filterData: controlComponentsData.filterData})
-            });
+        setControlComponentsData({ activePage: pageNumber, filterData: controlComponentsData.filterData })
+    });
 
     const handleSubmitFilter = (data: MovieFilterData) => {
-        setControlComponentsData({activePage: 0, filterData: data})
+        setControlComponentsData({ activePage: 0, filterData: data })
     }
 
     useEffect(() => {
-        const config : AxiosRequestConfig = {
+        const config: AxiosRequestConfig = {
             method: 'GET',
             url: '/movies',
             withCredentials: true,
@@ -45,22 +45,22 @@ export default function Movies() {
                 genreId: controlComponentsData.filterData.genre?.id
             },
         };
-    
+
         requestBackend(config).then((response) => {
             setPage(response.data);
         });
     }, [controlComponentsData]);
-    
+
     return (
         <div className="movies-container">
             <div className="filter ">
-                <MovieFilter onSubmitFilter={handleSubmitFilter}/>
+                <MovieFilter onSubmitFilter={handleSubmitFilter} />
             </div>
-           
-            <div className='row'>
+
+            <div className='row gx-12 gy-2'>
                 {page?.content.map(movie => (
-                    <div key={movie.id}  className='col-sm-6 col-m-6 col-lg-6 col-xl-3'>
-                            <MovieCard movie={movie}/>
+                    <div key={movie.id} className='col-sm-6 col-md-6 col-lg-6 col-xl-3'>
+                        <MovieCard movie={movie} />
                     </div>
                 ))}
             </div>
@@ -70,7 +70,7 @@ export default function Movies() {
                 range={3}
                 onChange={handlePageChange}
             />
-                
+
         </div>
     )
 }

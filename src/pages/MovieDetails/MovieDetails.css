@@ -15,6 +15,21 @@
     padding-right: 20px;
 }
 
+
+@media (min-width: 576px) {
+    .movie-details-container {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .movie-details-container {
+        padding: 40px;
+    }
+}
+
+
+
 @media (min-width: 1200px) {
     .movie-details-container {
         padding: 36px 40px;
@@ -27,6 +42,11 @@
     .cards-reviews {
         padding: 10px 17px;
         margin-bottom: 30px;
+    }
+
+    .movie-details-content {
+        max-width: 1120px;
+        margin: auto;
     }
 
 }
