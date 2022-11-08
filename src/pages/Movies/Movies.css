@@ -17,8 +17,11 @@
     margin-top: 10px;
 }
 
+.filter-box {
+    max-width: 260px;
+}
+
 .filter-select__control {
-    
     font-size: 16px;
     background-color: #6C6C6C !important;
     height: 50px;
@@ -26,8 +29,12 @@
     border-radius: 4px !important;
 }
 
-.filter-select__dropdown-indicator {
-    color: #FFF;
+.filter-select__dropdown-indicator svg {
+    color: #9E9E9E;
+}
+
+.filter-select__clear-indicator svg {
+    color: #BEBDBD;
 }
 
 .filter-select__single-value {

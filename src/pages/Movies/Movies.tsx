@@ -1,9 +1,8 @@
 import { AxiosRequestConfig } from 'axios';
-import { generateKey } from 'crypto';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import MovieCard from '../../components/MovieCard/MovieCard';
+import Pagination from '../../components/Pagination/Pagination';
 import { Genre } from '../../types/genre';
 import { movie } from '../../types/movie';
 import { SpringPage } from '../../types/vendor/spring';
@@ -18,6 +17,9 @@ export default function Movies() {
 
     const [selectCategories, setSelectCategories] = useState<Genre[]>([]);
 
+    const handleChangeCategory = (value: Genre) => {
+    }
+
     useEffect(()=> {
         const config : AxiosRequestConfig = {
             url: '/genres',
@@ -26,35 +28,42 @@ export default function Movies() {
         requestBackend(config)
             .then(response => {
                 setSelectCategories(response.data);
-                console.log(response.data)
             })
     }, []);
 
-
     useEffect(() => {
+        getMovies(0);
+    }, []);
+    
+    const getMovies = (pageNumber: number) => {
         const params : AxiosRequestConfig = {
             url: '/movies',
             withCredentials: true,
             params: {
-                page: 0,
+                page: pageNumber,
                 size: 4,
             },
         };
-
+    
         requestBackend(params).then((response) => {
             setPage(response.data);
         });
-    }, [selectCategories]);
+
+    }
 
     return (
         <div className="movies-container">
             <div className="filter-container">
-                <Select 
-                    options={selectCategories}
-                    classNamePrefix="filter-select"
-                    getOptionLabel={(genre: Genre) => genre.name}
-                    getOptionValue={(genre: Genre) => String(genre.id)}
-                />
+                <div className="filter-box">
+                    <Select
+                        options={selectCategories}
+                        classNamePrefix="filter-select"
+                        isClearable
+                        getOptionLabel={(genre: Genre) => genre.name}
+                        getOptionValue={(genre: Genre) => String(genre.id)}
+                        onChange={value => handleChangeCategory(value as Genre)}
+                    />
+                </div>
             </div>
            
             <div className='row'>
@@ -64,6 +73,12 @@ export default function Movies() {
                     </div>
                 ))}
             </div>
+            <Pagination
+                forcePage={page?.number}
+                pageCount={(page) ? page.totalPages : 0}
+                range={3}
+                onChange={getMovies}
+            />
                 
         </div>
     )
