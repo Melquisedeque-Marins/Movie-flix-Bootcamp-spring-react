@@ -1,7 +1,7 @@
 import { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
-import Select from 'react-select';
 import MovieCard from '../../components/MovieCard/MovieCard';
+import MovieFilter from '../../components/MovieFilter/MovieFilter';
 import Pagination from '../../components/Pagination/Pagination';
 import { Genre } from '../../types/genre';
 import { movie } from '../../types/movie';
@@ -9,38 +9,33 @@ import { SpringPage } from '../../types/vendor/spring';
 import { requestBackend } from '../../util/requests';
 import './Movies.css';
 
-
+type ControlComponentsData = {
+    activePage: number;
+}
 
 export default function Movies() {
 
+    const [controlComponentsData, setControlComponentsData]
+     = useState<ControlComponentsData>(
+        {
+        activePage: 0
+        }
+    );
+
     const [page, setPage] = useState<SpringPage<movie>>(); 
 
-    const [selectCategories, setSelectCategories] = useState<Genre[]>([]);
+   
 
-    const handleChangeCategory = (value: Genre) => {
-    }
-
-    useEffect(()=> {
-        const config : AxiosRequestConfig = {
-            url: '/genres',
-            withCredentials: true,
-        };
-        requestBackend(config)
-            .then(response => {
-                setSelectCategories(response.data);
-            })
-    }, []);
+    const handlePageChange = ((pageNumber: number) => {
+       setControlComponentsData({activePage: pageNumber})
+            });
 
     useEffect(() => {
-        getMovies(0);
-    }, []);
-    
-    const getMovies = (pageNumber: number) => {
         const params : AxiosRequestConfig = {
             url: '/movies',
             withCredentials: true,
             params: {
-                page: pageNumber,
+                page: controlComponentsData.activePage,
                 size: 4,
             },
         };
@@ -48,23 +43,11 @@ export default function Movies() {
         requestBackend(params).then((response) => {
             setPage(response.data);
         });
-
-    }
-
+    }, [controlComponentsData]);
+    
     return (
         <div className="movies-container">
-            <div className="filter-container">
-                <div className="filter-box">
-                    <Select
-                        options={selectCategories}
-                        classNamePrefix="filter-select"
-                        isClearable
-                        getOptionLabel={(genre: Genre) => genre.name}
-                        getOptionValue={(genre: Genre) => String(genre.id)}
-                        onChange={value => handleChangeCategory(value as Genre)}
-                    />
-                </div>
-            </div>
+                <MovieFilter/>
            
             <div className='row'>
                 {page?.content.map(movie => (
@@ -77,7 +60,7 @@ export default function Movies() {
                 forcePage={page?.number}
                 pageCount={(page) ? page.totalPages : 0}
                 range={3}
-                onChange={getMovies}
+                onChange={handlePageChange}
             />
                 
         </div>
