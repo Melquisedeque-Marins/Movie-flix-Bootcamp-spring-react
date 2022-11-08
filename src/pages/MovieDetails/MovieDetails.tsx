@@ -7,6 +7,8 @@ import ReviewForm from '../../components/ReviewForm/ReviewForm';
 
 import './MovieDetails.css';
 import CardReviews from '../../components/CardReviews/CardReviews';
+import MovieCardFull from '../../components/MovieCardFull/MovieCardFull';
+import { movie } from '../../types/movie';
 
 type urlParams = {
     movieId: string;
@@ -29,6 +31,8 @@ export default function MovieDetails() {
 
     const { movieId } = useParams<urlParams>();
 
+    const [movie, setMovie] = useState<movie>(); 
+
     const [reviews, setReviews] = useState<Review[]>([]); 
 
     useEffect(() => {
@@ -44,6 +48,19 @@ export default function MovieDetails() {
         });
     }, [movieId]);
 
+    useEffect(() => {
+        const config : AxiosRequestConfig = {
+            method: 'GET',
+            url: `/movies/${movieId}`,
+            withCredentials: true,
+            };
+
+        requestBackend(config)
+            .then((response) => {
+                 setMovie(response.data);
+        });
+    }, [movieId]);
+
     const handleOnInsertReview = (review: Review) => {
         const clone = [...reviews];
         clone.push(review);
@@ -53,7 +70,7 @@ export default function MovieDetails() {
     return (
         <div className="movie-details-container">
             <div className="title-details">
-                <h1>Tela detalhes do filme id: {movieId}</h1>
+                <MovieCardFull movie={movie}/>
             </div>
                 {hasAnyHoles(['ROLE_MEMBER']) &&
                 <ReviewForm movieId={movieId} onInsertReview={handleOnInsertReview} />

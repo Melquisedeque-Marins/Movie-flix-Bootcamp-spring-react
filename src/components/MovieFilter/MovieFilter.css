@@ -11,7 +11,10 @@
 
 
 .filter-box {
+    display: flex;
+    align-items: center;
     width: 260px;
+    height: 60px;
 }
 
 
@@ -43,3 +46,4 @@
 .filter-select__indicator-separator {
     display: none;
 }
+

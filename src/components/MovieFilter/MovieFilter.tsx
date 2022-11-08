@@ -1,4 +1,5 @@
 import { AxiosRequestConfig } from "axios";
+import { getRandomValues } from "crypto";
 import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import Select from "react-select";
@@ -7,32 +8,44 @@ import { requestBackend } from "../../util/requests";
 
 import './MovieFilter.css';
 
-type MovieFilterData = {
-    genre: Genre;
+export type MovieFilterData = {
+    genre?: Genre | null;
 }
 
-export default function MovieFilter () {
+type Props = {
+    onSubmitFilter : (data: MovieFilterData) => void;
+}
+
+export default function MovieFilter ( { onSubmitFilter } : Props) {
 
     const {
         register,
         handleSubmit,
+        setValue,
+        getValues,
         control
     } = useForm<MovieFilterData>();
    
-    const [selectCategories, setSelectCategories] = useState<Genre[]>([]);
+    const [selectGenre, setSelectGenre] = useState<Genre[]>([]);
     
-    const handleChangeCategory = (value: Genre) => {
-        console.log("ENVIOU", value);
+    const handleChangeGenre = (value: Genre) => {
+        setValue('genre', value);
+
+        const obj: MovieFilterData = {
+            genre: getValues("genre")
+        }
+        onSubmitFilter(obj);
     }
 
     useEffect(()=> {
         const config : AxiosRequestConfig = {
+            method: 'GET',
             url: '/genres',
             withCredentials: true,
         };
         requestBackend(config)
             .then(response => {
-                setSelectCategories(response.data);
+                setSelectGenre(response.data);
             })
     }, []);
 
@@ -44,13 +57,13 @@ export default function MovieFilter () {
                             control={control}
                             render={({field}) => (
                                 <Select {...field}
-                                    options={selectCategories}
+                                    options={selectGenre}
                                     classNamePrefix="filter-select"
                                     isClearable
                                     placeholder="Escolha um gênero"
                                     getOptionLabel={(genre: Genre) => genre.name}
                                     getOptionValue={(genre: Genre) => String(genre.id)}
-                                    onChange={value => handleChangeCategory(value as Genre)}
+                                    onChange={value => handleChangeGenre(value as Genre)}
                                 />
                             )}
                         />
