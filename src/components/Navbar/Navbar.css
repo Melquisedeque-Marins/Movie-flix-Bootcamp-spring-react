@@ -49,6 +49,11 @@
 
 @media (min-width: 1200px) {
     .navbar {
-        padding: 0 49px;
+        padding: 0 40px;
+    }
+}
+@media (min-width: 1400px) {
+    .navbar {
+        padding-right: 240px;
     }
 }

@@ -47,7 +47,9 @@ export default function Movies() {
     
     return (
         <div className="movies-container">
+            <div className="filter ">
                 <MovieFilter/>
+            </div>
            
             <div className='row'>
                 {page?.content.map(movie => (

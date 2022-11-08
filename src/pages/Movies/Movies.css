@@ -8,52 +8,6 @@
     text-decoration: none;
 }
 
-.filter-container {
-    padding: 5px 20px;
-    background: #6C6C6C;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
-
-.filter-box {
-    max-width: 260px;
-}
-
-.filter-select__control {
-    font-size: 16px;
-    background-color: #6C6C6C !important;
-    height: 50px;
-    border: 1px solid #E1E1E1 !important;
-    border-radius: 4px !important;
-}
-
-.filter-select__dropdown-indicator svg {
-    color: #9E9E9E;
-}
-
-.filter-select__clear-indicator svg {
-    color: #BEBDBD;
-}
-
-.filter-select__single-value {
-    color: #FFF !important;
-}
-
-.filter-select__placeholder {
-    color: #FFF !important;
-}
-
-.filter-select__indicator-separator {
-    display: none;
-}
-
-
-
-
-
-
 @media (min-width: 576px) {
     .movies-container {
         padding: 10px 20px;
@@ -70,8 +24,17 @@
 
 @media (min-width: 1200px) {
    .row {
-    max-width: 1150px;
-    margin: auto;
+        max-width: 1145px;
+        margin: auto;
+        margin-bottom: 20px;
+
+   }
+
+   .filter {
+        max-width: 1120px;
+        margin: auto;
+        margin-bottom: 40px;
+        margin-top: 20px;
    }
 
 }
