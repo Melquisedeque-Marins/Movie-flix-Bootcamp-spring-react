@@ -74,7 +74,12 @@ export default function MovieDetails() {
                     {hasAnyHoles(['ROLE_MEMBER']) &&
                     <ReviewForm movieId={movieId} onInsertReview={handleOnInsertReview} />
                     }
-                    <CardReviews reviews={reviews}/>
+                    {reviews.length !== 0 ?
+                     <CardReviews reviews={reviews}/>
+                     : <div className="reviews-null">
+                         <p>Esse filme ainda não possui avaliações.</p>
+                     </div>
+                    }
                 </div>
              
         </div>

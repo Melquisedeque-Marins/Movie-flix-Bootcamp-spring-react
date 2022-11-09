@@ -20,7 +20,7 @@
 }
 
 .pagination-item:hover {
-    color: orangered;
+    color: black;
 }
 
 .pagination-item.active {
@@ -31,8 +31,12 @@
     background-color: #FFC700;
 }
 
-.arrow-inactive {
+.arrow-inactive a {
     color: #9E9E9E;  
+}
+
+li a {
+    color: #FFC700; 
 }
 
 .arrow-active {
@@ -44,11 +48,10 @@
     color: #FFC700;
 }
 
-.arrow-next {
+.arrow-next{
     margin-left: 10px;
     color: #FFC700;
 }
-
 
 .pagination-arrow-container {
     display: flex;
