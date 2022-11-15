@@ -32,13 +32,13 @@ A aplicação frontend em questão é uma UI para busca de filmes e avaliação 
 ## 💻 Layout da aplicação
 
 ### ✅ Tela Inicial
-![](https://raw.githubusercontent.com/Melquisedeque-Marins/Bootcamp-react-devsuperior-task03/main/utils/Login-screen.png)
+![](https://raw.githubusercontent.com/Melquisedeque-Marins/Bootcamp-react-devsuperior-task03/main/gh-assets/Login.png)
 
 ### ✅ Tela de Cadastro
-![](https://raw.githubusercontent.com/Melquisedeque-Marins/Bootcamp-react-devsuperior-task03/main/utils/Catalog-screen.png)
+![](https://raw.githubusercontent.com/Melquisedeque-Marins/Bootcamp-react-devsuperior-task03/main/gh-assets/Catalog.png)
 
 ### ✅ Tela de Login
-![](https://raw.githubusercontent.com/Melquisedeque-Marins/Bootcamp-react-devsuperior-task03/main/utils/Reviews-screen.png)
+![](https://raw.githubusercontent.com/Melquisedeque-Marins/Bootcamp-react-devsuperior-task03/main/gh-assets/Reviews.png)
 
 
 <a id="Tecnologias"></a>
