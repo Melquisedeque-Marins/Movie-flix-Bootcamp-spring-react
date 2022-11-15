@@ -34,10 +34,10 @@ A aplicação frontend em questão é uma UI para busca de filmes e avaliação 
 ### ✅ Tela Inicial
 ![](https://raw.githubusercontent.com/Melquisedeque-Marins/Bootcamp-react-devsuperior-task03/main/gh-assets/Login.png)
 
-### ✅ Tela de Cadastro
+### ✅ Tela de listagem de filmes
 ![](https://raw.githubusercontent.com/Melquisedeque-Marins/Bootcamp-react-devsuperior-task03/main/gh-assets/Catalog.png)
 
-### ✅ Tela de Login
+### ✅ Tela de detalhes e avaliação
 ![](https://raw.githubusercontent.com/Melquisedeque-Marins/Bootcamp-react-devsuperior-task03/main/gh-assets/Reviews.png)
 
 
