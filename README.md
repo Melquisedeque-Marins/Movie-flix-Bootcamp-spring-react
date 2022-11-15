@@ -2,7 +2,7 @@
 
 ## Aplicação front-Web desenvolvida em React js utilizando a ferramenta Vite e o template TypeScript.
 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge)
 
 ## Índice
 <!--ts-->
@@ -85,7 +85,7 @@ Você pode acessar o código fonte do projeto clicando [aqui](https://github.com
   ``$ yarn``.
 - Para iniciar a aplicação
   ``$ yarn dev``.
-- Para ambas as situações o projeto será estartado na porta:
+- Para ambas as situações o projeto será iniciado na porta:
   ``5173``
   do seu computador.
 
