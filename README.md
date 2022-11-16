@@ -15,18 +15,22 @@
 * [Instruções para download e execução do projeto](#Instruções)
 * [Autor](#Autor)
 <!--te-->
+<br>
 
 ## Sobre o projeto
 Este projeto foi desenvolvido como desfaio de código no Bootcamp React da DevSuperior.<br>
-A aplicação frontend em questão é uma UI para busca de filmes e avaliação dos mesmos. A API consumida neste projeto tambem foi desenvolvida por mim durante um desafio de código do Bootcamp Spring tambem da DevSuperior. <br> 
+A aplicação frontend em questão é uma UI para busca de filmes e avaliação dos mesmos. A API consumida neste projeto foi disponibilizada pela DevSuperior no Heroku, mas também tive a oportunidade de desenvolve-la como desafio de código durante o Bootcamp Spring. <br> 
+<br>
 
 <a id="Funcionalidades"></a>
 ## 🔨 Funcionalidades
-- Tela de Login com authenticação via Oauth2 e Autorização utilizando JWT;
-- Tela de catalogo de filmes com filtro por genero e paginação;
-- Tela de detalhes do fime com campo de avaliação do filme com renderização e autorização condicioanadas a roles;
+- Tela de Login com autenticação via Oauth2 e Autorização utilizando JWT;
+- Tela de catalogo de filmes com filtro por gênero e paginação;
+- Tela de detalhes do fime com campo de avaliação do filme com renderização e autorização condicioanais por perfil;
 - Responsividade para dispositivos mobile e desktops.
 - Toasts de notificação
+<br>
+<br>
 
 <a id="Layout"></a>
 ## 💻 Layout da aplicação
@@ -39,7 +43,8 @@ A aplicação frontend em questão é uma UI para busca de filmes e avaliação 
 
 ### ✅ Tela de detalhes e avaliação
 ![](https://raw.githubusercontent.com/Melquisedeque-Marins/Bootcamp-react-devsuperior-task03/main/gh-assets/Reviews.png)
-
+<br>
+<br>
 
 <a id="Tecnologias"></a>
 ## 🛠️️ Tecnologias e linguagens utilizadas
@@ -53,6 +58,10 @@ A aplicação frontend em questão é uma UI para busca de filmes e avaliação 
 - Axios
 - Bibliotecas (Bootstrap, qs, JWTDecode, React-paginate )
 - VS Code IDE
+- Docker
+- Git
+<br>
+<br>
 
 <a id="Acesso_ao_projeto"></a>
 ## 📁 Acesso ao projeto
@@ -60,11 +69,16 @@ A aplicação frontend em questão é uma UI para busca de filmes e avaliação 
 Você pode acessar o código fonte do projeto clicando [aqui](https://github.com/Melquisedeque-Marins/Bootcamp-react-devsuperior-task03/tree/main/src).
 
 <a id="Pre-requisitos"></a>
-## ✔ Pré-requisitos
+## ✔ Pré-requisitos para utilização
 
-✔️ **Node V^14.20.1**
+✔️ Node V^14.20.1
 
-✔️ **Acesso à internet**
+✔️ Acesso à internet
+
+✔️ Docker *
+<br>
+<br>
+
 
 <a id="Instruções"></a>
 ## 🎲️ Instruções para download e execução do projeto
@@ -74,22 +88,50 @@ Você pode acessar o código fonte do projeto clicando [aqui](https://github.com
 - Faça o clone o repósitório
   ``$ git clone https://github.com/Melquisedeque-Marins/Bootcamp-react-devsuperior-task03.git``
 - Acesse a pasta do projeto terminal/cmd
-  ``$ cd /Bootcamp-react-devsuperior-task03``.
-- Execute o seguinte comando caso use o npm
+  ``$ cd /Bootcamp-react-devsuperior-task03``. 
+- Execute os seguintes comandos caso use o npm
 - Para instalar as dependencias
   ``$ npm install``.
 - Para iniciar a aplicação
   ``$ npm run dev``.
-- Execute o seguinte comando caso use o yarn
+
+- Execute os seguintes comandos caso use o yarn
 - Para instalar as dependencias
-  ``$ yarn``.
+  ``$ yarn`` ou ``$ yarn install``.
 - Para iniciar a aplicação
   ``$ yarn dev``.
-- Para ambas as situações o projeto será iniciado na porta:
-  ``5173``
+
+- Para ambas as situações a aplicação será iniciado na porta:
+  ``3000``
   do seu computador.
+<br>
+<br>
+## 🐳 Execução do projeto com docker-compose *
+- Abra o terminal e navegue até o diretório onde deseja salvar o projeto
+  ``$ cd /"caminho do diretório"``.
+- Faça o clone o repósitório
+  ``$ git clone https://github.com/Melquisedeque-Marins/Bootcamp-react-devsuperior-task03.git``
+- Acesse a pasta do projeto terminal/cmd
+  ``$ cd /Bootcamp-react-devsuperior-task03``. 
+- Utilize o seguinte comando do docker
+  ``$ docker compose up``. 
+- A aplicação será iniciado na porta:
+  ``3000``
+  do seu computador.
+<br>
+<br>
+## 🐳 Execução do projeto com imagem docker *
+- Acesse o terminal/cmd e digite
+  ``$ docker run -p 3000:3000 --name nome-do-container melquisedequejr/movie ``. 
+- A aplicação será iniciado na porta:
+  ``3000``
+  do seu computador.
+- Detalhes do comando utilizado
+  ``-p (3000:3000)`` a flag -p refere-se a porta disponibilizada pelo container, o numero antes do ":" é a porta da máquina local e o depois refere-se a porta da máquina do container. 
+  ``--name (nome do container)`` a flag --name refere-se ao nome do container criado a partir da imagem. Este é opicional. 
 
-
+- ``melquisedequejr/movie`` É o nome da imagem criada a partir do projeto e está hospedada no meu <a href="https://hub.docker.com/u/melquisedequejr">DockerHub</a>.
+ 
 <a id="Autor"></a>
 ## Autor
 <a href="https://github.com/Melquisedeque-Marins">
