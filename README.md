@@ -18,7 +18,7 @@
 <br>
 
 ## Sobre o projeto
-Este projeto foi desenvolvido como desfaio de código no Bootcamp React da DevSuperior.<br>
+Este projeto foi desenvolvido como desafio de código no Bootcamp React da DevSuperior.<br>
 A aplicação frontend em questão é uma UI para busca de filmes e avaliação dos mesmos. A API consumida neste projeto foi disponibilizada pela DevSuperior no Heroku, mas também tive a oportunidade de desenvolve-la como desafio de código durante o Bootcamp Spring. <br> 
 <br>
 
@@ -30,8 +30,6 @@ A aplicação frontend em questão é uma UI para busca de filmes e avaliação 
 - Responsividade para dispositivos mobile e desktops.
 - Toasts de notificação
 <br>
-<br>
-
 <a id="Layout"></a>
 ## 💻 Layout da aplicação
 
@@ -62,7 +60,6 @@ A aplicação frontend em questão é uma UI para busca de filmes e avaliação 
 - Git
 <br>
 <br>
-
 <a id="Acesso_ao_projeto"></a>
 ## 📁 Acesso ao projeto
 
@@ -76,6 +73,8 @@ Você pode acessar o código fonte do projeto clicando [aqui](https://github.com
 ✔️ Acesso à internet
 
 ✔️ Docker *
+
+*Só é necessário caso queira gerar um container da aplicação por meio da imagem.
 <br>
 <br>
 
@@ -106,7 +105,8 @@ Você pode acessar o código fonte do projeto clicando [aqui](https://github.com
   do seu computador.
 <br>
 <br>
-## 🐳 Execução do projeto com docker-compose *
+## 🐳 Execução do projeto com docker-compose 
+
 - Abra o terminal e navegue até o diretório onde deseja salvar o projeto
   ``$ cd /"caminho do diretório"``.
 - Faça o clone o repósitório
@@ -120,7 +120,8 @@ Você pode acessar o código fonte do projeto clicando [aqui](https://github.com
   do seu computador.
 <br>
 <br>
-## 🐳 Execução do projeto com imagem docker *
+## 🐳 Execução do projeto com imagem docker
+
 - Acesse o terminal/cmd e digite
   ``$ docker run -p 3000:3000 --name nome-do-container melquisedequejr/movie ``. 
 - A aplicação será iniciado na porta:
@@ -138,5 +139,7 @@ Você pode acessar o código fonte do projeto clicando [aqui](https://github.com
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/93653645?v=4" width="120px;" alt=""/>
 <br />
  <sub><b>Melquisedeque Marins Junior</b></sub></a> <a href="https://www.linkedin.com/in/melquisedeque-marins-junior-324291230"></a>
+ <br>
+ <br>
 
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/melquisedeque-marins-junior-324291230)
